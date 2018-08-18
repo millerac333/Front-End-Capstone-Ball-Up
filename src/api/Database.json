@@ -1,0 +1,139 @@
+{
+  "users": [
+    {
+      "username": "Test User 1",
+      "password": "password",
+      "id": 1
+    },
+    {
+      "username": "Test User 2",
+      "password": "password",
+      "id": 2
+    },
+    {
+      "username": "Baller4Life",
+      "password": "espn",
+      "id": 3
+    },
+    {
+      "username": "morgan",
+      "password": "reddit",
+      "id": 4
+    },
+    {
+      "username": "ShuMaker",
+      "password": "baller",
+      "id": 5
+    },
+    {
+      "username": "Jenna",
+      "password": "coke",
+      "id": 6
+    },
+    {
+      "username": "sadie",
+      "password": "dog",
+      "id": 7
+    },
+    {
+      "username": "Robert",
+      "password": "new",
+      "id": 8
+    },
+    {
+      "username": "Shuuu",
+      "password": "Shoe",
+      "id": 9
+    }
+  ],
+  "locations": [
+    {
+      "nameCourt": "Test Location Name 1",
+      "address": "111 Test Location Address",
+      "hours": "8AM-8PM",
+      "typeCourt": true,
+      "id": 1
+    },
+    {
+      "nameCourt": "Test Location Name 2",
+      "address": "222 Test Location Address",
+      "hours": "8AM-8PM",
+      "typeCourt": true,
+      "id": 2
+    },
+    {
+      "nameCourt": "Bear Court ",
+      "address": "333 222 st",
+      "hours": "4am -6pm",
+      "typeCourt": true,
+      "id": 3
+    },
+    {
+      "nameCourt": "Wolf court ",
+      "address": "66e33 street ",
+      "hours": "4-8",
+      "typeCourt": false,
+      "id": 4
+    },
+    {
+      "nameCourt": "Sadies Court",
+      "address": "956 Beech Bend Drive",
+      "hours": "3pm-6pm",
+      "typeCourt": false,
+      "id": 5
+    },
+    {
+      "nameCourt": "SH?U",
+      "address": "where do you live ",
+      "hours": "anywhere ",
+      "typeCourt": "Outdoor",
+      "id": 6
+    }
+  ],
+  "games": [
+    {
+      "userId": 3,
+      "joinedUserId": "5",
+      "locationId": 4,
+      "duration": "2pm-3pm",
+      "courtSize": false,
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "joinedUserId": "9",
+      "locationId": 3,
+      "duration": "COKE",
+      "courtSize": true,
+      "id": 2
+    },
+    {
+      "userId": 4,
+      "joinedUserId": "2",
+      "locationId": 2,
+      "duration": "COKE",
+      "courtSize": true,
+      "id": 2
+    },
+    {
+      "userId": 4,
+      "joinedUserId": "1",
+      "locationId": 4,
+      "duration": "COKE",
+      "courtSize": true,
+      "id": 2
+    }
+  ],
+  "joinedGames": [
+    {
+      "joinedGameId": "1",
+      "joinedUserId": "2",
+      "id": 1
+    },
+    {
+      "joinedGameId": "2",
+      "joinedUserId": "1",
+      "id": 2
+    }
+  ]
+}
