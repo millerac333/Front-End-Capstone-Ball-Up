@@ -64,13 +64,13 @@ export default class GameCardOther extends Component {
               {this.props.otherGames.joinedUserId}
             </div>
             <div>
-              {/* <button
-                type="delete"
-                onClick={() => this.props.deleteGame(this.props.games.id)}
+              <button
+                type="button"
+                // onClick={() => this.props.deleteGame(this.props.otherGames.id)}
                 className="btn btn-primary"
               >
-                Delete
-              </button> */}
+                Join Game
+              </button>
             </div>
           </div>
         </div>
