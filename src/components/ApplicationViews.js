@@ -137,6 +137,7 @@ export default class ApplicationViews extends Component {
                 deleteGame={this.deleteGame}
                 users={this.state.users}
                 games={this.state.games}
+                otherGames={this.props.otherGame}
               />
             );
           }}

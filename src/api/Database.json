@@ -88,6 +88,13 @@
       "hours": "anywhere ",
       "typeCourt": "Outdoor",
       "id": 6
+    },
+    {
+      "nameCourt": "shu favorite place ",
+      "address": "123 cloud st",
+      "hours": "24 /7",
+      "typeCourt": "Indoor/Gym",
+      "id": 7
     }
   ],
   "games": [
@@ -113,7 +120,7 @@
       "locationId": 2,
       "duration": "COKE",
       "courtSize": true,
-      "id": 2
+      "id": 3
     },
     {
       "userId": 4,
@@ -121,7 +128,15 @@
       "locationId": 4,
       "duration": "COKE",
       "courtSize": true,
-      "id": 2
+      "id": 4
+    },
+    {
+      "userId": "3",
+      "joinedUserId": "",
+      "locationId": "7",
+      "duration": "122222222234",
+      "courtSize": "Half-court",
+      "id": 5
     }
   ],
   "joinedGames": [

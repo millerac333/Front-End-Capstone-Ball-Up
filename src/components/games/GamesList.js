@@ -13,7 +13,8 @@ export default class GamesList extends Component {
     duration: "",
     courtSize: "",
     locations: this.props.locations,
-    users: this.props.users
+    users: this.props.users,
+    otherGames: []
   };
 
   deleteGame = gameID => {
@@ -32,27 +33,29 @@ export default class GamesList extends Component {
     fetch("http://localhost:3333/games?_expand=location&_expand=user")
       .then(e => e.json())
       .then(games => {
-        console.log("before split", typeof games);
+        // console.log("before split", typeof games);
         let userGames = sessionStorage.getItem("currentUser");
-        console.log(" user state in game list", userGames);
+        // console.log(" user state in game list", userGames);
         let createdGames = games.filter(game => {
-          console.log("user Id in filter", typeof game.userId);
-          console.log("userGames in filter", typeof userGames);
+          // console.log("user Id in filter", typeof game.userId);
+          // console.log("userGames in filter", typeof userGames);
           let boolean = +game.userId === +userGames;
-          console.log("boolean", boolean);
+          // console.log("boolean", boolean);
           return boolean;
         });
         let otherGames = games.filter(game => {
           let otherBoolean = +game.userId !== +userGames;
-          console.log("otherBoolean", otherBoolean);
-          console.log("new user id state", userGames);
+          // console.log("otherBoolean", otherBoolean);
+          // console.log("new user id state", userGames);
+          // this.setState({ otherBoolean: true });
           return otherBoolean;
         });
-        console.log("created games", createdGames);
-        console.log("other games", otherGames);
-        this.setState({ games: createdGames, otherGames });
+        // console.log("created games", createdGames);
+        // console.log("other games", otherGames);
+        this.setState({ games: createdGames });
+        this.setState({ otherGames: otherGames });
       });
-    this.setState({ otherBoolean: true });
+    // this.setState({ otherBoolean: true });
   }
 
   render() {
@@ -79,8 +82,8 @@ export default class GamesList extends Component {
             ))}
           </section>
           <section className="otherGames">
-            {this.state.otherGames.map(otherGame => (
-              <GameCardOther key={otherGame.id} otherGames={otherGame} />
+            {this.state.otherGames.map(otherGames => (
+              <GameCardOther key={otherGames.id} otherGames={otherGames} />
             ))}
           </section>
         </div>
