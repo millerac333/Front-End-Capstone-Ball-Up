@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GameCard from "./GameCard";
+import GameCardOther from "./GameCardOther";
 import GeneralManager from "../../modules/GeneralManager";
 import { Link } from "react-router-dom";
 
@@ -51,25 +52,38 @@ export default class GamesList extends Component {
         console.log("other games", otherGames);
         this.setState({ games: createdGames, otherGames });
       });
+    this.setState({ otherBoolean: true });
   }
 
   render() {
     console.log("state of games after rendered", this.state.games);
+    console.log("search", this.state.otherGames);
     return (
       <React.Fragment>
-        <Link
-          className="add-game"
-          to={{
-            pathname: "/games/new"
-          }}
-        >
-          Add Game
-        </Link>
-        <section className="games">
-          {this.state.games.map(game => (
-            <GameCard key={game.id} games={game} deleteGame={this.deleteGame} />
-          ))}
-        </section>
+        <div className="gameslist">
+          <Link
+            className="add-game"
+            to={{
+              pathname: "/games/new"
+            }}
+          >
+            Add Game
+          </Link>
+          <section className="games">
+            {this.state.games.map(game => (
+              <GameCard
+                key={game.id}
+                games={game}
+                deleteGame={this.deleteGame}
+              />
+            ))}
+          </section>
+          <section className="otherGames">
+            {this.state.otherGames.map(otherGame => (
+              <GameCardOther key={otherGame.id} otherGames={otherGame} />
+            ))}
+          </section>
+        </div>
       </React.Fragment>
     );
   }
