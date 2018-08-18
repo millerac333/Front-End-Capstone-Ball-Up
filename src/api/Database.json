@@ -146,9 +146,100 @@
       "id": 1
     },
     {
-      "joinedGameId": "2",
-      "joinedUserId": "1",
+      "joinedUserId": 4,
+      "joinedGameId": {
+        "userId": 4,
+        "joinedUserId": "2",
+        "locationId": 2,
+        "duration": "COKE",
+        "courtSize": true,
+        "id": 3,
+        "location": {
+          "nameCourt": "Test Location Name 2",
+          "address": "222 Test Location Address",
+          "hours": "8AM-8PM",
+          "typeCourt": true,
+          "id": 2
+        },
+        "user": {
+          "username": "morgan",
+          "password": "reddit",
+          "id": 4
+        }
+      },
       "id": 2
+    },
+    {
+      "joinedUserId": 4,
+      "joinedGameId": {
+        "userId": 4,
+        "joinedUserId": "2",
+        "locationId": 2,
+        "duration": "COKE",
+        "courtSize": true,
+        "id": 3,
+        "location": {
+          "nameCourt": "Test Location Name 2",
+          "address": "222 Test Location Address",
+          "hours": "8AM-8PM",
+          "typeCourt": true,
+          "id": 2
+        },
+        "user": {
+          "username": "morgan",
+          "password": "reddit",
+          "id": 4
+        }
+      },
+      "id": 3
+    },
+    {
+      "joinedUserId": 4,
+      "joinedGameId": {
+        "userId": 4,
+        "joinedUserId": "1",
+        "locationId": 4,
+        "duration": "COKE",
+        "courtSize": true,
+        "id": 4,
+        "location": {
+          "nameCourt": "Wolf court ",
+          "address": "66e33 street ",
+          "hours": "4-8",
+          "typeCourt": false,
+          "id": 4
+        },
+        "user": {
+          "username": "morgan",
+          "password": "reddit",
+          "id": 4
+        }
+      },
+      "id": 4
+    },
+    {
+      "joinedUserId": 4,
+      "joinedGameId": {
+        "userId": 4,
+        "joinedUserId": "2",
+        "locationId": 2,
+        "duration": "COKE",
+        "courtSize": true,
+        "id": 3,
+        "location": {
+          "nameCourt": "Test Location Name 2",
+          "address": "222 Test Location Address",
+          "hours": "8AM-8PM",
+          "typeCourt": true,
+          "id": 2
+        },
+        "user": {
+          "username": "morgan",
+          "password": "reddit",
+          "id": 4
+        }
+      },
+      "id": 5
     }
   ]
 }

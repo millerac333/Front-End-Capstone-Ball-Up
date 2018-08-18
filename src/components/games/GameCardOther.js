@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import JoinedGamesManager from "../../modules/JoinedGamesManager";
 
 export default class GameCardOther extends Component {
   state = {
@@ -9,33 +10,22 @@ export default class GameCardOther extends Component {
     duration: this.props.otherGames.duration,
     courtSize: this.props.otherGames.courtSize
   };
-  // componentWillMount() {
-  //   fetch("http://localhost:3333/games?_expand=location&_expand=user")
-  //     .then(e => e.json())
-  //     .then(games => {
-  //       // console.log("before split", typeof games);
-  //       let userGames = sessionStorage.getItem("currentUser");
-  //       // console.log(" user state in game list", userGames);
-  //       let createdGames = games.filter(game => {
-  //         // console.log("user Id in filter", typeof game.userId);
-  //         // console.log("userGames in filter", typeof userGames);
-  //         let boolean = +game.userId === +userGames;
-  //         // console.log("boolean", boolean);
-  //         return boolean;
-  //       });
-  //       let otherGames = games.filter(game => {
-  //         let otherBoolean = +game.userId !== +userGames;
-  //         // console.log("otherBoolean", otherBoolean);
-  //         // console.log("new user id state", userGames);
-  //         return otherBoolean;
-  //       });
-  //       // console.log("created games", createdGames);
-  //       // console.log("other games", otherGames);
-  //       this.setState({ games: createdGames, otherGames });
-  //     });
-  // }
+
+  addJoinedGame = e => {
+    e.preventDefault();
+    const joinGame = {
+      joinedUserId: this.state.userId,
+      joinedGameId: this.state.otherGames
+    };
+
+    JoinedGamesManager.add(joinGame).then(() => {
+      alert("You have Joined a Game!");
+    });
+    this.props.history.push("/");
+  };
 
   render() {
+    console.log("other games to other card", this.props.otherGames.userId);
     return (
       <React.Fragment>
         <div className="otherGames-card">
@@ -64,13 +54,15 @@ export default class GameCardOther extends Component {
               {this.props.otherGames.joinedUserId}
             </div>
             <div>
-              <button
-                type="button"
-                // onClick={() => this.props.deleteGame(this.props.otherGames.id)}
-                className="btn btn-primary"
-              >
-                Join Game
-              </button>
+              <div>
+                <button
+                  type="button"
+                  onClick={this.addJoinedGame}
+                  className="btn btn-primary"
+                >
+                  Join Game
+                </button>
+              </div>
             </div>
           </div>
         </div>

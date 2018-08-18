@@ -7,6 +7,7 @@ import GameForm from "./games/GameForm";
 import GamesManager from "../modules/GamesManager";
 import UsersManager from "../modules//UsersManager";
 import CourtsManager from "../modules/CourtsManager";
+// import JoinedGamesManager from "../modules/JoinedGamesManager";
 import Login from "./login/Login";
 import EditGame from "./games/GameEdit";
 
@@ -178,19 +179,19 @@ export default class ApplicationViews extends Component {
           }}
         />
         {/* <Route
-     exact
-     path="/gamesJoined"
-     render={props => {
-      return (
-       <GamesJoinedList
-        {...props}
-        deleteGameJoined={this.deleteGameJoined}
-        gamesJoined={this.state.gamesJoined}
-       />
-      );
-     }}
-    />
-    <Route
+          exact
+          path="/games/join"
+          render={props => {
+            return (
+              <GameJoin
+                {...props}
+                otherGames={props.location.state.otherGames}
+                locations={this.state.locations}
+              />
+            );
+          }}
+        /> */}
+        {/* <Route
      path="/gamesJoined/:gameJoinedId(\d+)"
      render={props => {
       return (
@@ -213,7 +214,8 @@ export default class ApplicationViews extends Component {
        />
       );
      }}
-    /> */}
+    /> */}{" "}
+        */}
         {/* <Route
           exact
           path="/users"
