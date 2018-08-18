@@ -15,7 +15,7 @@ export default class GameCardOther extends Component {
     e.preventDefault();
     const joinGame = {
       joinedUserId: this.state.userId,
-      joinedGameId: this.state.otherGames
+      joinedGameId: this.state.otherGames.id
     };
 
     JoinedGamesManager.add(joinGame).then(() => {
