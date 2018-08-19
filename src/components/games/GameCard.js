@@ -34,7 +34,10 @@ export default class GameCard extends Component {
               {this.props.games.user.username}
             </div>
             <div className="games-card-joinedUserId">
-              <label htmlFor="games-card-joinedUserId">Game Joined By: </label>
+              <label htmlFor="games-card-joinedUserId">
+                Requested Number of Players:
+                {}
+              </label>
               {this.props.games.joinedUserId}
             </div>
             <div>

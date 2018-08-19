@@ -49,7 +49,8 @@ export default class GameCardOther extends Component {
             </div>
             <div className="otherGames-card-joinedUserId">
               <label htmlFor="otherGames-card-joinedUserId">
-                Game Joined By:{" "}
+                Requested Number of Players:
+                {}
               </label>
               {this.props.otherGames.joinedUserId}
             </div>
