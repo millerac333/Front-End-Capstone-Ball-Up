@@ -144,16 +144,17 @@ export default class ApplicationViews extends Component {
           }}
         />
         {/* <Route
-     path="/games/:gameId(\d+)"
-     render={props => {
-      return (
-       <EditGame
-        {...props}
-        hanldleUpdate={this.hanldleUpdate}
-        games={this.state.games}
-       />
-      );
-     }} */}
+          path="/games/:gameId(\d+)"
+          render={props => {
+            return (
+              <EditGame
+                {...props}
+                hanldleUpdate={this.hanldleUpdate}
+                games={this.state.games}
+              />
+            );
+          }}
+        /> */}
         <Route
           path="/games/new"
           render={props => {
@@ -215,7 +216,6 @@ export default class ApplicationViews extends Component {
       );
      }}
     /> */}{" "}
-        */}
         {/* <Route
           exact
           path="/users"
