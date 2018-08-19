@@ -23,11 +23,8 @@ export default class CourtCard extends Component {
             </div>
             <div className="courts-card-courtType">
               <label htmlFor="courts-card-courtType">Court Type</label>
-
               {this.props.location.typeCourt ? "Outdoor" : "Indoor/Gym"}
-              {/* <a href="#"
-                                onClick={() => this.props.addGame(this.props.courts.id)}
-                             className="card-link">Add Game</a> */}
+              {/* onClick={() => this.props.addGame(this.props.courts.id)} */}
             </div>
           </div>
         </div>

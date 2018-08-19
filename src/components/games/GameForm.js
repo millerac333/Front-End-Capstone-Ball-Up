@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import GamesManager from "../../modules/GamesManager";
-// import CourtsManager from "../../modules/CourtsManager";
 
 export default class GameForm extends Component {
   state = {
@@ -18,7 +17,6 @@ export default class GameForm extends Component {
     console.log("new user id state", typeof userGames);
   }
 
-  // Update state whenever an input field is edited
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;

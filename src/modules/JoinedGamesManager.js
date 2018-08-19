@@ -11,16 +11,6 @@ export default Object.create(GeneralManager, {
       return this.getAllData("joinedGames");
     }
   },
-  // getWithCaretaker: {
-  //     value: function (id) {
-  //         return fetch(`${settings.remoteURL}/animals/${id}/?_expand=employee`).then(e => e.json())
-  //     }
-  // },
-  // listWithCaretaker: {
-  //     value: function (id) {
-  //         return fetch(`${settings.remoteURL}/animals?_expand=employee`).then(e => e.json())
-  //     }
-  // },
   add: {
     value: function(resource) {
       return this.postData("joinedGames", resource);

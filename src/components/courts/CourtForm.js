@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CourtsManager from "../../modules/CourtsManager";
 
 export default class CourtForm extends Component {
-  // Set initial state
   state = {
     nameCourt: "",
     address: "",
@@ -10,7 +9,6 @@ export default class CourtForm extends Component {
     typeCourt: ""
   };
 
-  // Update state whenever an input field is edited
   handleFieldChange = e => {
     const stateToChange = {};
     stateToChange[e.target.id] = e.target.value;
@@ -84,9 +82,7 @@ export default class CourtForm extends Component {
           <div>
             <button type="submit">Add Court</button>
           </div>
-          {/* <Control>
-            <Button isLink={this.props.history.push("/courts/")}>Cancel</Button>
-          </Control> */}
+          {/* <Button isLink={this.props.history.push("/courts/")}>Cancel</Button> */}
         </form>
       </React.Fragment>
     );

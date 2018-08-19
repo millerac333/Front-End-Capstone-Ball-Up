@@ -47,7 +47,6 @@ export default class GamesList extends Component {
           let otherBoolean = +game.userId !== +userGames;
           // console.log("otherBoolean", otherBoolean);
           // console.log("new user id state", userGames);
-          // this.setState({ otherBoolean: true });
           return otherBoolean;
         });
         // console.log("created games", createdGames);
@@ -55,7 +54,6 @@ export default class GamesList extends Component {
         this.setState({ games: createdGames });
         this.setState({ otherGames: otherGames });
       });
-    // this.setState({ otherBoolean: true });
   }
 
   render() {

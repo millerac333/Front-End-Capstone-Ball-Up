@@ -1,4 +1,4 @@
-import { Navbar, NavbarItem, Control, Button } from "bloomer";
+import { Navbar, NavbarItem } from "bloomer";
 import React, { Component } from "react";
 
 export default class BallUpNavBar extends Component {
@@ -10,11 +10,11 @@ export default class BallUpNavBar extends Component {
         <NavbarItem href="/locations">Courts List</NavbarItem>
         <NavbarItem href="/locations/new">Add Court</NavbarItem>
         <NavbarItem>
-          <Control>
+          {/* <Control>
             <Button id="logout" target="_blank">
               <span>Logout</span>
             </Button>
-          </Control>
+          </Control> */}
         </NavbarItem>
       </Navbar>
     );

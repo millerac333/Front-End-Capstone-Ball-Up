@@ -95,6 +95,12 @@
       "hours": "24 /7",
       "typeCourt": "Indoor/Gym",
       "id": 7
+    },
+    {
+      "nameCourt": "i like courts ",
+      "address": "where st",
+      "hours": "never",
+      "id": 8
     }
   ],
   "games": [
@@ -129,26 +135,13 @@
       "duration": "COKE",
       "courtSize": true,
       "id": 4
-    },
-    {
-      "userId": "3",
-      "joinedUserId": "",
-      "locationId": "7",
-      "duration": "122222222234",
-      "courtSize": "Half-court",
-      "id": 5
     }
   ],
   "joinedGames": [
     {
-      "joinedGameId": "1",
-      "joinedUserId": "2",
+      "joinedGameId": 1,
+      "joinedUserId": 2,
       "id": 1
-    },
-    {
-      "joinedUserId": 4,
-      "joinedGameId": 3,
-      "id": 2
     }
   ]
 }

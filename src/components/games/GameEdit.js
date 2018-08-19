@@ -18,7 +18,6 @@ export default class EditGame extends Component {
     console.log("new user id state", typeof userGames);
   }
 
-  // Update state whenever an input field is edited
   handleFieldChange = e => {
     const stateToChange = {};
     stateToChange[e.target.id] = e.target.value;

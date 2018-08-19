@@ -7,13 +7,13 @@ export default class Login extends Component {
     username: "",
     password: ""
   };
-  // Update state whenever an input field is edited
+
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
-  // Simplistic handler for login submit
+
   handleLogin = e => {
     e.preventDefault();
     GeneralManager.getAllData(`users?username=${this.state.username}`).then(
@@ -58,19 +58,17 @@ export default class Login extends Component {
           GeneralManager.postData("users", {
             username: this.state.username,
             password: this.state.password
-          })
-            // .then(e => e.json())
-            .then(logNewUser => {
-              sessionStorage.setItem("currentUser", logNewUser.id);
-              console.log("logNewUser", logNewUser.id);
-              sessionStorage.setItem(
-                "credentials",
-                JSON.stringify({
-                  username: this.state.username,
-                  password: this.state.password
-                })
-              );
-            });
+          }).then(logNewUser => {
+            sessionStorage.setItem("currentUser", logNewUser.id);
+            console.log("logNewUser", logNewUser.id);
+            sessionStorage.setItem(
+              "credentials",
+              JSON.stringify({
+                username: this.state.username,
+                password: this.state.password
+              })
+            );
+          });
           this.props.history.push("/");
         } else if (user.length > 0) {
           if (this.state.username === user[0].username) {
