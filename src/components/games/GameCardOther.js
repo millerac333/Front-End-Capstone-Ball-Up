@@ -14,14 +14,19 @@ export default class GameCardOther extends Component {
   addJoinedGame = e => {
     e.preventDefault();
     const joinGame = {
-      joinedUserId: this.state.userId,
-      joinedGameId: this.state.otherGames.id
+      userId: this.state.userId,
+      gameId: this.state.otherGames.id
     };
 
     JoinedGamesManager.add(joinGame).then(() => {
       alert("You have Joined a Game!");
     });
-    this.props.history.push("/");
+
+    // decreaseItem = id => {
+    //   this.setState({ gameId: +this.props.otherGames.joinedUserId - 1 });
+    // };
+
+    // this.props.history.push("/");
   };
 
   render() {

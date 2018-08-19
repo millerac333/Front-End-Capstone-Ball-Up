@@ -17,8 +17,8 @@ export default class GamesList extends Component {
     otherGames: []
   };
 
-  deleteGame = gameID => {
-    GeneralManager.deleteData("games", gameID)
+  deleteGame = gameId => {
+    GeneralManager.deleteData("games", gameId)
       .then(() => {
         return GeneralManager.getAllData("games");
       })

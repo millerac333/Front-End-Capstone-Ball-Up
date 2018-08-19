@@ -139,9 +139,14 @@
   ],
   "joinedGames": [
     {
-      "joinedGameId": 1,
-      "joinedUserId": 2,
+      "gameId": 1,
+      "userId": 2,
       "id": 1
+    },
+    {
+      "userId": 4,
+      "gameId": 4,
+      "id": 2
     }
   ]
 }
