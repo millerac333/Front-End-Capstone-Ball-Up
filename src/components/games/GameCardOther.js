@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import JoinedGamesManager from "../../modules/JoinedGamesManager";
+import Btn from "./button";
 
 export default class GameCardOther extends Component {
   state = {
@@ -8,8 +9,18 @@ export default class GameCardOther extends Component {
     joinedUserId: this.props.otherGames.joinedUserId,
     locationId: this.props.otherGames.locationId,
     duration: this.props.otherGames.duration,
-    courtSize: this.props.otherGames.courtSize
+    courtSize: this.props.otherGames.courtSize,
+    join: true
+    // show_button: true
   };
+
+  // componentDidMount() {
+  //   fetch("http://localhost:3333/games?_expand=location&_expand=user")
+  //     .then(e => e.json())
+  //     .then(otherGames => {
+  //       // console.log("before split", typeof games);
+  //       let userGames = sessionStorage.getItem("currentUser");
+  //     });
 
   addJoinedGame = e => {
     e.preventDefault();
@@ -17,17 +28,18 @@ export default class GameCardOther extends Component {
       userId: this.state.userId,
       gameId: this.state.otherGames.id
     };
-
     JoinedGamesManager.add(joinGame).then(() => {
       alert("You have Joined a Game!");
     });
-
-    // decreaseItem = id => {
-    //   this.setState({ gameId: +this.props.otherGames.joinedUserId - 1 });
-    // };
-
-    // this.props.history.push("/");
   };
+
+  // let hideButton = ('show_button') => {
+  // button.addEventListener('click',hideshow,false);
+
+  // function hideshow() {
+  //     document.getElementById('hidden-div').style.display = 'block';
+  //     this.style.display = 'none'
+  // }
 
   render() {
     console.log("other games to other card", this.props.otherGames.userId);
@@ -60,14 +72,19 @@ export default class GameCardOther extends Component {
               {this.props.otherGames.joinedUserId}
             </div>
             <div>
-              <div>
+              <div id="divButton">
+                <Btn />
+
+                {/* {this.state.clicked ? (<Sign/>) : (
                 <button
+                  id="show_button"
+                  className="btn btn-primary"
                   type="button"
                   onClick={this.addJoinedGame}
-                  className="btn btn-primary"
                 >
                   Join Game
                 </button>
+                )} */}
               </div>
             </div>
           </div>
