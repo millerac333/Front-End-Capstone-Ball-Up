@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import GameCard from "./GameCard";
 import GameCardOther from "./GameCardOther";
 import GeneralManager from "../../modules/GeneralManager";
+import JoinedGamesManager from "../../modules/JoinedGamesManager";
 import { Link } from "react-router-dom";
 
 export default class GamesList extends Component {
@@ -27,6 +28,23 @@ export default class GamesList extends Component {
           games: gamesList
         });
       });
+  };
+
+  addJoinedGame = e => {
+    e.preventDefault();
+    const joinedGame = {
+      userId: this.state.userId,
+      gameId: this.state.otherGames.id
+    };
+    JoinedGamesManager.add(joinedGame).then(() => {
+      alert("You have joined a game!");
+    });
+  };
+
+  leaveGame = gameId => {
+    GeneralManager.deleteData("joinedGames", gameId).then(() => {
+      alert("You have left a game!");
+    });
   };
 
   componentDidMount() {

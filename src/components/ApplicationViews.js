@@ -139,6 +139,8 @@ export default class ApplicationViews extends Component {
                 users={this.state.users}
                 games={this.state.games}
                 otherGames={this.props.otherGame}
+                joinGame={this.joinGame}
+                leaveGame={this.leaveGame}
               />
             );
           }}

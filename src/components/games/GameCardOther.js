@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import JoinedGamesManager from "../../modules/JoinedGamesManager";
+import GeneralManager from "../../modules/GeneralManager";
 import Btn from "./button";
 
 export default class GameCardOther extends Component {
@@ -11,35 +12,13 @@ export default class GameCardOther extends Component {
     duration: this.props.otherGames.duration,
     courtSize: this.props.otherGames.courtSize,
     join: true
-    // show_button: true
   };
 
-  // componentDidMount() {
-  //   fetch("http://localhost:3333/games?_expand=location&_expand=user")
-  //     .then(e => e.json())
-  //     .then(otherGames => {
-  //       // console.log("before split", typeof games);
-  //       let userGames = sessionStorage.getItem("currentUser");
-  //     });
-
-  addJoinedGame = e => {
-    e.preventDefault();
-    const joinGame = {
-      userId: this.state.userId,
-      gameId: this.state.otherGames.id
-    };
-    JoinedGamesManager.add(joinGame).then(() => {
-      alert("You have Joined a Game!");
-    });
-  };
-
-  // let hideButton = ('show_button') => {
-  // button.addEventListener('click',hideshow,false);
-
-  // function hideshow() {
-  //     document.getElementById('hidden-div').style.display = 'block';
-  //     this.style.display = 'none'
-  // }
+  componentDidMount() {
+    let userGames = sessionStorage.getItem("currentUser");
+    this.setState({ userId: userGames });
+    // console.log("new user id state", typeof userGames);
+  }
 
   render() {
     console.log("other games to other card", this.props.otherGames.userId);
@@ -74,17 +53,6 @@ export default class GameCardOther extends Component {
             <div>
               <div id="divButton">
                 <Btn />
-
-                {/* {this.state.clicked ? (<Sign/>) : (
-                <button
-                  id="show_button"
-                  className="btn btn-primary"
-                  type="button"
-                  onClick={this.addJoinedGame}
-                >
-                  Join Game
-                </button>
-                )} */}
               </div>
             </div>
           </div>

@@ -16,6 +16,11 @@ export default Object.create(GeneralManager, {
       return this.postData("joinedGames", resource);
     }
   },
+  leave: {
+    value: function(resource) {
+      return this.deleteData("joinedGames", resource);
+    }
+  },
   addAndList: {
     value: function(resource) {
       return this.postData("joinedGames", resource).then(() => this.all());
