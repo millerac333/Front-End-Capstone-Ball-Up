@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import JoinedGamesManager from "../../modules/JoinedGamesManager";
-// import GeneralManager from "../../modules/GeneralManager";
 
 export default class Btn extends Component {
   state = {
@@ -17,19 +15,11 @@ export default class Btn extends Component {
     });
   }
   addJoinedGame = () => {
-    const joinedGame = {
-      userId: this.props.userId,
-      gameId: this.props.gameId
-    };
-    JoinedGamesManager.add(joinedGame).then(() => {
-      alert("You have joined a game!");
-    });
+    alert("You have joined a game!");
   };
 
-  leaveGame = id => {
-    JoinedGamesManager.remove(id).then(() => {
-      alert("You have left a game!");
-    });
+  leaveGame = () => {
+    alert("You have left a game!");
   };
 
   render() {

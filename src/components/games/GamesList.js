@@ -30,21 +30,16 @@ export default class GamesList extends Component {
       });
   };
 
-  addJoinedGame = e => {
-    e.preventDefault();
+  addJoinedGame = () => {
     const joinedGame = {
-      userId: this.state.userId,
+      userId: this.state.userGames,
       gameId: this.state.otherGames.id
     };
-    JoinedGamesManager.add(joinedGame).then(() => {
-      alert("You have joined a game!");
-    });
+    JoinedGamesManager.add(joinedGame);
   };
 
   leaveGame = gameId => {
-    GeneralManager.deleteData("joinedGames", gameId).then(() => {
-      alert("You have left a game!");
-    });
+    GeneralManager.deleteData("joinedGames", gameId);
   };
 
   componentDidMount() {
