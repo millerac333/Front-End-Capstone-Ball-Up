@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import JoinedGamesManager from "../../modules/JoinedGamesManager";
-import GeneralManager from "../../modules/GeneralManager";
+// import JoinedGamesManager from "../../modules/JoinedGamesManager";
+// import GeneralManager from "../../modules/GeneralManager";
 import Btn from "./button";
 
 export default class GameCardOther extends Component {
@@ -52,7 +52,12 @@ export default class GameCardOther extends Component {
             </div>
             <div>
               <div id="divButton">
-                <Btn />
+                <Btn
+                  addJoinedGame={this.props.addJoinedGame}
+                  leaveGame={this.props.leaveGame}
+                  userGames={this.state.userGames}
+                  // {...props}
+                />
               </div>
             </div>
           </div>

@@ -26,9 +26,9 @@ export default Object.create(GeneralManager, {
       return this.postData("joinedGames", resource).then(() => this.all());
     }
   },
-  removeAndList: {
+  remove: {
     value: function(id) {
-      return this.deleteData("joinedGames", id).then(() => this.all());
+      return this.deleteData("joinedGames", id);
     }
   }
 });
